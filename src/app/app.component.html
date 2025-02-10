@@ -1,3 +1,55 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ pageTitle }}</ion-title>  <!-- Título dinámico -->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>  <!-- Botón para abrir el menú -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu content-id="main-content" style="--width: 350px;">
+  <ion-header>
+    <ion-item button (click)="navigateTo('perfil')" lines="none" class="profile-card">
+      <ion-avatar slot="start">
+        <img alt="Jugador" src="https://media.sketchfab.com/models/3329b7c37a694fd19295e7f68d3471f8/thumbnails/b781a636cd9c42b88fb9e2cb1701912e/048651d65ad643f0b79b830823b49bb8.jpeg" />
+      </ion-avatar>
+      <ion-label class="profile-label">
+        <h3>CeritNorts</h3>
+        <p>12/100</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item button (click)="navigateTo('lista-juegos')">
+        <ion-icon slot="start" name="game-controller"></ion-icon> <!-- Ícono de controlador de juegos -->
+        <ion-label>Lista Personal de Juegos</ion-label>
+      </ion-item>
+    
+      <ion-item button (click)="navigateTo('logros')">
+        <ion-icon slot="start" name="trophy"></ion-icon> <!-- Ícono de trofeo -->
+        <ion-label>Logros Completados</ion-label>
+      </ion-item>
+    
+      <ion-item button (click)="navigateTo('sugerencias')">
+        <ion-icon slot="start" name="bulb"></ion-icon> <!-- Ícono de bombilla -->
+        <ion-label>Sugerencias de Logros</ion-label>
+      </ion-item>
+    
+      <ion-item button (click)="navigateTo('configuracion')">
+        <ion-icon slot="start" name="settings"></ion-icon> <!-- Ícono de configuración -->
+        <ion-label>Configuración</ion-label>
+      </ion-item>
+    
+      <ion-item button (click)="navigateTo('estadisticas')">
+        <ion-icon slot="start" name="stats-chart"></ion-icon> <!-- Ícono de estadísticas -->
+        <ion-label>Estadísticas</ion-label>
+      </ion-item>
+    </ion-list>
+    
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet id="main-content"></ion-router-outlet>

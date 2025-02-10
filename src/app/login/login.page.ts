@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
 
   login() {
     if (this.email === 'admin' && this.password === 'admin') {
-      this.navController.navigateForward('/home');
+      this.navController.navigateForward('/lista-juegos');
     }
   }
 
@@ -44,7 +44,7 @@ export class LoginPage implements OnInit {
         const credential = GoogleAuthProvider.credential(user.authentication.idToken);
         const auth = getAuth();  // Usar la API Modular
         await signInWithCredential(auth, credential);  // Iniciar sesión en Firebase
-        this.navController.navigateForward('/home');  // Navegar después de login
+        this.navController.navigateForward('/lista-juegos');  // Navegar después de login
       }
     } catch (error) {
       console.error("Error al autenticar con Google en Firebase:", error);
@@ -61,7 +61,7 @@ export class LoginPage implements OnInit {
           const auth = getAuth();  // Usar la API Modular
           signInWithCredential(auth, credential)
             .then(() => {
-              this.navController.navigateForward('/home'); // Navegar después de login
+              this.navController.navigateForward('/lista-juegos'); // Navegar después de login
             })
             .catch((error) => {
               console.error('Error al autenticar con Google en Firebase:', error);
