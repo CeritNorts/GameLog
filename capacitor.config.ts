@@ -1,9 +1,16 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.robot.solar',
   appName: 'GamesLog',
-  webDir: 'www'
+  webDir: 'www',
+  plugins: {
+    GoogleAuth: {
+      scopes: ['profile', 'email'],
+      serverClientId: '1095247217419-e240gfjnjcjef8451tqt2o4pkks2hctm.apps.googleusercontent.com', // Reemplaza con tu client ID
+      forceCodeForRefreshToken: true,
+    },
+  },
 };
 
 export default config;
