@@ -5,9 +5,9 @@ html, body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    background: #0d0d0d; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
-    font-family: 'Press Start 2P', cursive; /* Fuente estilo gamer */
+    background: #0d0d0d;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
 }
 
 ion-app, ion-content {
@@ -16,30 +16,29 @@ ion-app, ion-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    --background: #0d0d0d; /* Fondo oscuro */
+    --background: #0d0d0d;
 }
 
-/* Estilo del menú lateral */
 ion-menu {
-    --background: #222; /* Fondo oscuro para el menú */
-    --color: #00ffea; /* Texto brillante */
-    --border-color: #00ffea; /* Borde brillante */
+    --background: #222;
+    --color: #00ffea;
+    --border-color: #00ffea;
 }
 
 ion-header {
-    background: linear-gradient(135deg, #333, #444); /* Fondo degradado para el header del menú */
-    border-bottom: 3px solid #00ffea; /* Borde inferior brillante */
+    background: linear-gradient(135deg, #333, #444);
+    border-bottom: 3px solid #00ffea;
 }
 
 ion-toolbar {
-    --background: transparent; /* Fondo transparente para la barra de herramientas */
+    --background: transparent;
 }
 
 ion-title {
-    color: #00ffea; /* Título en color brillante */
+    color: #00ffea;
     font-weight: bold;
     font-size: 24px;
-    text-shadow: 0 0 5px #00ffea; /* Sombra brillante en el título */
+    text-shadow: 0 0 5px #00ffea;
 }
 
 ion-list {
@@ -48,19 +47,21 @@ ion-list {
 
 ion-item {
     background: transparent;
-    border-bottom: 2px solid #444; /* Borde inferior en los items */
+    border-bottom: 2px solid #444;
     transition: background 0.3s, transform 0.3s;
+    --color: #00ffea;
+    --border-color: #00ffea;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 ion-item:hover {
-    background: #333; /* Fondo oscuro en hover */
-    transform: scale(1.05); /* Efecto de escala */
+    background: #333;
+    transform: scale(1.05);
 }
 
 ion-label {
-    color: #00ffea; /* Texto brillante en las etiquetas */
+    color: #00ffea;
     font-weight: bold;
     font-size: 18px;
     text-transform: uppercase;
@@ -70,14 +71,12 @@ ion-item ion-label {
     font-family: 'Press Start 2P', cursive;
 }
 
-/* Estilos del botón para abrir el menú */
 ion-menu-button {
-    color: #00ffea; /* Icono de abrir menú brillante */
+    color: #00ffea;
 }
 
-/* Fondo y estilo del contenido */
 ion-content {
-    --background: #0d0d0d; /* Fondo oscuro */
+    --background: #0d0d0d;
 }
 
 ion-router-outlet {
@@ -113,11 +112,11 @@ ion-button:hover {
 }
 
 .profile-card {
-  background: linear-gradient(135deg, #333, #444); /* Fondo con gradiente */
-  color: #fff; /* Texto blanco */
+  background: linear-gradient(135deg, #333, #444);
+  color: #fff;
   padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 255, 234, 0.5); /* Sombra brillante */
+  box-shadow: 0 4px 15px rgba(0, 255, 234, 0.5);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -125,76 +124,64 @@ ion-button:hover {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Efecto de hover para la tarjeta */
 .profile-card:hover {
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
-  box-shadow: 0 6px 20px rgba(0, 255, 234, 0.7); /* Aumenta la sombra */
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 255, 234, 0.7);
 }
 
-/* Estilo del avatar */
 .profile-card ion-avatar {
   width: 60px;
   height: 60px;
-  border-radius: 50%; /* Imagen redonda */
-  border: 3px solid #00ffea; /* Borde brillante */
+  border-radius: 50%;
+  border: 3px solid #00ffea;
   margin-right: 20px;
-  box-shadow: 0 0 10px #00ffea; /* Sombra alrededor del avatar */
+  box-shadow: 0 0 10px #00ffea;
 }
 
-/* Estilo del texto del jugador */
 .profile-label h3 {
   font-size: 20px;
   font-weight: bold;
   color: #00ffea;
-  text-transform: uppercase; /* Texto en mayúsculas */
+  text-transform: uppercase;
   margin-bottom: 5px;
-  text-shadow: 0 0 5px #00ffea; /* Sombra brillante */
+  text-shadow: 0 0 5px #00ffea;
 }
 
-/* Estilo del subtítulo del jugador */
 .profile-label p {
   font-size: 14px;
   color: #aaa;
-  text-shadow: 0 0 3px #00ffea; /* Sombra sutil */
+  text-shadow: 0 0 3px #00ffea;
 }
 
-/* Media Queries para pantallas pequeñas */
 @media screen and (max-width: 768px) {
-    /* Reducir el tamaño de la fuente del título en pantallas pequeñas */
     ion-title {
         font-size: 20px;
     }
 
-    /* Ajustar el tamaño de los íconos */
     ion-icon {
         font-size: 22px;
     }
 
-    /* Reducir el tamaño de la fuente de los elementos del menú */
     ion-label {
         font-size: 16px;
     }
 
-    /* El menú lateral debe ocupar toda la pantalla en dispositivos móviles */
     ion-menu {
-        --width: 100%; /* Menú completo en móviles */
+        --width: 100%;
     }
 
-    /* Hacer que los items del menú se apilen en lugar de estar alineados en una línea */
     ion-item {
         padding-left: 15px;
         padding-right: 15px;
         font-size: 16px;
     }
 
-    /* Ajustar el avatar en la tarjeta de perfil */
     .profile-card ion-avatar {
         width: 50px;
         height: 50px;
         margin-right: 15px;
     }
 
-    /* Ajustar el contenido del perfil */
     .profile-label h3 {
         font-size: 18px;
     }
