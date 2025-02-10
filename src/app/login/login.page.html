@@ -6,7 +6,7 @@
         <ion-input [(ngModel)]="email" name="email" placeholder="Username or Email" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+        <ion-input [(ngModel)]="password" name="password" type="password" placeholder="password" required></ion-input>
       </ion-item>
       <p class="forgot-password">Forgot your password?</p>
       <ion-button type="submit" expand="full" [disabled]="!loginForm.form.valid">Submit</ion-button>
