@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   updatePageTitle() {
     const currentUrl = this.router.url;
     if (currentUrl.includes('lista-juegos')) {
-      this.pageTitle = 'Lista de Juegos';
+      this.pageTitle = 'MIS JUEGOS';
     } else if (currentUrl.includes('logros')) {
       this.pageTitle = 'Logros Completados';
     } else if (currentUrl.includes('sugerencias')) {

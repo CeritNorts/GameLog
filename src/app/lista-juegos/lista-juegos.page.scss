@@ -1,29 +1,199 @@
-.games-container {
-    display: flex;
-    overflow-x: auto;
-    padding: 10px;
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: #0d0d0d; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  font-family: 'Press Start 2P', cursive; /* Fuente estilo gamer */
+}
+
+ion-app, ion-content {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  --background: #0d0d0d; /* Fondo oscuro */
+  padding: 20px;
+}
+
+/* Estilos para el título */
+ion-toolbar {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+ion-title {
+  color: #00ffea;
+  font-weight: bold;
+  font-size: 24px;
+  text-shadow: 0 0 10px #00ffea;
+}
+
+/* Botón "Agregar Juego" en la esquina superior derecha */
+#agregar-juego {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  font-size: 14px; /* Tamaño más pequeño */
+  padding: 8px 16px;
+  z-index: 10; /* Aseguramos que esté por encima de otros elementos */
+}
+
+/* Contenedor de las cartas */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 24px 32px;
+  margin-top: 60px; /* Espacio para que las cartas no se superpongan con el botón */
+}
+
+/* Estilos para las cartas */
+.card {
+  background: linear-gradient(135deg, #333, #444);
+  border-radius: 15px;
+  box-shadow: 0 0 10px #00ffea;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  padding: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffea;
+}
+
+.card img {
+  width: 100%;
+  height: 200px; /* Establecemos una altura fija para que todas las imágenes tengan el mismo tamaño */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: #00ffea;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card p {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Estilos de los botones dentro de las cartas */
+ion-button {
+  width: 100%;
+  padding: 12px;
+  background: #00ffea;
+  color: #0d0d0d;
+  border: 2px solid #00ffea;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+ion-button:hover {
+  background: #00b3c6;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #00ffea;
+}
+
+ion-button[expand="full"] {
+  margin-top: 20px;
+}
+
+/* Estilo para el formulario */
+form {
+  width: 70%;
+  background: linear-gradient(135deg, #222, #333);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00ffea;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 15px;
+}
+
+ion-label {
+  color: #00ffea;
+  font-weight: bold;
+  font-family: 'Press Start 2P', cursive;
+}
+
+ion-input {
+  background: #222;
+  border-radius: 8px;
+  padding: 12px;
+  border: 2px solid #00ffea;
+  width: 100%;
+  color: #00ffea;
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Estilo para el texto dentro de los cuadros de texto */
+form ion-item {
+  margin-bottom: 10px;
+}
+
+form ion-button {
+  margin-top: 20px;
+}
+
+ion-card {
+  margin-top: 200px;
+}
+
+/* Estilos para el placeholder flotante */
+ion-label.floating {
+  color: #00ffea !important;
+  font-weight: bold;
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr;
   }
-  
-  .game-card {
-    flex: 0 0 auto;
-    width: 200px;
-    margin-right: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
+  .card {
+    padding: 15px;
   }
-  
-  .game-card img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  .game-card h3 {
-    margin: 10px 0;
-  }
-  
-  .game-card p {
-    margin: 5px 0;
+  ion-button {
     font-size: 14px;
   }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    padding: 20px;
+  }
+  ion-button {
+    font-size: 15px;
+  }
+}
+

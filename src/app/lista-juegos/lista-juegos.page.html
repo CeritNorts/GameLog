@@ -1,13 +1,41 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>lista-juegos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-header>
     <ion-toolbar>
-      <ion-title size="large">lista-juegos</ion-title>
+      <ion-title>Juegos Populares</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
+  
+  <ion-content class="ion-padding">
+    <ion-button id="agregar-juego" (click)="toggleFormulario()">
+      {{ mostrarFormulario ? 'Cancelar' : 'Agregar Juego' }}
+    </ion-button>
+  
+    <div class="card-container">
+      <div class="card" *ngFor="let juego of juegos; let i = index">
+        <img [src]="juego.imagen" alt="{{ juego.nombre }}">
+        <h3>{{ juego.nombre }}</h3>
+        <p>{{ juego.desarrollador }}</p>
+        <ion-button color="danger" (click)="eliminarJuego(i)">Eliminar</ion-button>
+        <ion-button color="primary" (click)="actualizarJuego(i)">Actualizar</ion-button>
+      </div>
+    </div>
+  
+    <form *ngIf="mostrarFormulario" (ngSubmit)="agregarJuego()">
+      <ion-item>
+        <ion-label position="floating">Nombre del Juego</ion-label>
+        <ion-input [(ngModel)]="nuevoJuego.nombre" name="nombre" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Desarrollador</ion-label>
+        <ion-input [(ngModel)]="nuevoJuego.desarrollador" name="desarrollador" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">URL de la Imagen</ion-label>
+        <ion-input [(ngModel)]="nuevoJuego.imagen" name="imagen" required></ion-input>
+      </ion-item>
+  
+      <ion-button type="submit" expand="full">Guardar Juego</ion-button>
+    </form>
+  </ion-content>
+  

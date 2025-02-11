@@ -12,10 +12,7 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
-  {
-    path: 'lista-juegos',
-    loadChildren: () => import('./lista-juegos/lista-juegos.module').then( m => m.ListaJuegosPageModule)
-  },
+
   {
     path: 'logros',
     loadChildren: () => import('./logros/logros.module').then( m => m.LogrosPageModule)
@@ -35,6 +32,10 @@ const routes: Routes = [
   {
     path: 'estadisticas',
     loadChildren: () => import('./estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
+  },
+  {
+    path: 'lista-juegos',
+    loadChildren: () => import('./lista-juegos/lista-juegos.module').then( m => m.ListaJuegosPageModule)
   },
 ];
 
