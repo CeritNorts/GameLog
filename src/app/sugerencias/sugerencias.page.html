@@ -1,13 +1,80 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>sugerencias</ion-title>
+    <ion-title>Sugerencia de Logro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">sugerencias</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="container">
+    <h1 class="title">Sugiere un Nuevo Logro</h1>
+
+    <div class="suggestion-form">
+      <ion-item>
+        <ion-label position="floating">Nombre del Logro</ion-label>
+        <ion-input type="text" [(ngModel)]="logro.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea [(ngModel)]="logro.descripcion"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Juego</ion-label>
+        <ion-select [(ngModel)]="logro.juego">
+          <ion-select-option value="Minecraft">Minecraft</ion-select-option>
+          <ion-select-option value="Pepa Pig el Juego">Pepa Pig el Juego</ion-select-option>
+          <ion-select-option value="God of War">God of War</ion-select-option>
+          <ion-select-option value="Halo Reach">Halo Reach</ion-select-option>
+          <ion-select-option value="Among Us">Among Us</ion-select-option>
+          <ion-select-option value="FIFA 23">FIFA 23</ion-select-option>
+          <ion-select-option value="Halo Aniversario">Halo Aniversario</ion-select-option>
+          <ion-select-option value="GTA V">GTA V</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Imagen del Logro</ion-label>
+        <input type="file" (change)="cargarImagen($event)">
+      </ion-item>
+
+      <ion-button expand="full" class="submit-btn" (click)="agregarLogro()">Enviar Sugerencia</ion-button>
+    </div>
+
+    <h2 class="subtitle">Logros Sugeridos</h2>
+    <div class="achievements-container">
+      <!-- Logros preexistentes -->
+      <div class="achievement-card">
+        <div class="game-image-container">
+          <img src="assets/img/stealth.jpg" class="game-cover" />
+        </div>
+        <div class="game-info">
+          <h3 class="achievement-title">Maestro del Sigilo</h3>
+          <p class="achievement-desc">Completa una misión sin ser detectado.</p>
+        </div>
+      </div>
+      
+      <div class="achievement-card">
+        <div class="game-image-container">
+          <img src="assets/img/speed.jpg" class="game-cover" />
+        </div>
+        <div class="game-info">
+          <h3 class="achievement-title">Rey de la Velocidad</h3>
+          <p class="achievement-desc">Termina una carrera en menos de 2 minutos.</p>
+        </div>
+      </div>
+
+      <!-- Logros añadidos dinámicamente -->
+      <div class="achievement-card" *ngFor="let logro of logrosSugeridos">
+        <div class="game-image-container">
+          <img [src]="logro.imagen || 'assets/img/default-game.jpg'" class="game-cover" />
+        </div>
+        <div class="game-info">
+          <h3 class="achievement-title">{{ logro.nombre }}</h3>
+          <p class="achievement-desc">{{ logro.descripcion }}</p>
+          <p class="achievement-game"><strong>Juego:</strong> {{ logro.juego }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

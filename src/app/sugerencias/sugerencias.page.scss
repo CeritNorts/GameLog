@@ -1,0 +1,100 @@
+.container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffea;
+    text-shadow: 0 0 10px #00ffea;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 40px;
+  }
+  
+  .suggestion-form {
+    background: linear-gradient(135deg, #222, #333);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #00ffea;
+    margin-bottom: 30px;
+  }
+  
+  ion-item {
+    --background: transparent;
+    --color: white;
+    border: 1px solid #00ffea;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  ion-label {
+    color: #00ffea;
+    font-weight: bold;
+  }
+  
+  ion-button.submit-btn {
+    margin-top: 20px;
+    background: #00ffea;
+    color: #0d0d0d;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px #00ffea;
+  }
+  
+  .achievements-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .achievement-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .game-image-container {
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game-cover {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .game-info {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .achievement-title {
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .achievement-desc {
+    color: #bbb;
+    font-size: 14px;
+  }
+  
