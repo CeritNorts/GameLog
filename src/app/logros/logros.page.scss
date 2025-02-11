@@ -1,0 +1,202 @@
+/* General */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: #121212; /* Fondo oscuro similar a Xbox */
+    color: #fff;
+    font-family: 'Arial', sans-serif; /* Fuente más limpia y moderna */
+}
+
+ion-app, ion-content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    --background: #121212;
+}
+
+/* Contenedor Principal */
+.profile-container {
+    display: flex;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://media.sketchfab.com/models/3329b7c37a694fd19295e7f68d3471f8/thumbnails/b781a636cd9c42b88fb9e2cb1701912e/048651d65ad643f0b79b830823b49bb8.jpeg');
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Información de perfil (izquierda) */
+.profile-info {
+    flex: 1 1 300px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.profile-img-container {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    border-radius: 50%;
+    border: 5px solid #4caf50; /* Color verde Xbox */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.username {
+    font-size: 2em;
+    color: #4caf50;
+    text-align: center;
+}
+
+.status {
+    font-size: 1.2em;
+    color: #81c784;
+    text-align: center;
+}
+
+.social-info p {
+    font-size: 1.1em;
+    margin: 5px 0;
+    text-align: center;
+    color: #ccc;
+}
+
+.achievements-section {
+    margin-top: 20px;
+}
+
+.achievements-cards {
+    display: flex;
+    flex-direction: column; /* Tarjetas en columna */
+    gap: 15px;
+}
+
+/* Tarjetas de logros con disposición horizontal */
+.achievement-card {
+    background-color: rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    gap: 15px;
+    width: 100%;
+    max-width: 1500px;
+    justify-content: flex-start;
+}
+
+.game-image-container {
+    flex: 0 0 30%; /* La imagen ocupa el 30% del ancho de la tarjeta */
+    max-width: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.game-cover {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.game-info {
+    flex: 1; /* El contenido de texto ocupa el 70% restante de la tarjeta */
+    text-align: left; /* Alineación del texto */
+}
+
+.achievement-title {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.progress-label {
+    color: white;
+    font-size: 12px;
+}
+
+ion-progress-bar {
+    --background: #555;
+    --progress-background: white;
+    transition: width 0.3s ease;
+}
+
+/* Lado derecho (botones y juegos recientes) */
+.right-side {
+    flex: 1 1 300px;
+    max-width: 350px;
+}
+
+/* Botones de acción */
+.action-buttons {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.btn-action {
+    --background: #333;
+    --color: white;
+    --border-radius: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 250px; /* Ajustamos el tamaño para que no sean tan anchos */
+    transition: transform 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    margin-left: auto; /* Centrar el botón */
+    margin-right: auto; /* Centrar el botón */
+}
+
+.btn-action:hover {
+    transform: scale(1.05);
+    --background: white;
+    --color: #0d0d0d;
+}
+
+/* Juegos Recientes */
+.games-section {
+    margin-top: 30px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cambiamos a 2 columnas para más ajuste */
+    gap: 15px;
+}
+
+.game-card {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.game-title {
+    color: #4caf50;
+    margin-top: 10px;
+}
+
+/* Barra de progreso */
+.progress-bar {
+    background-color: #555;
+    border-radius: 5px;
+    width: 100%;
+    height: 10px;
+}
+
+.progress {
+    background-color: #4caf50;
+    height: 100%;
+    border-radius: 5px;
+}

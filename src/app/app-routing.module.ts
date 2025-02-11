@@ -26,10 +26,6 @@ const routes: Routes = [
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
-    path: 'configuracion',
-    loadChildren: () => import('./configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
-  },
-  {
     path: 'estadisticas',
     loadChildren: () => import('./estadisticas/estadisticas.module').then( m => m.EstadisticasPageModule)
   },

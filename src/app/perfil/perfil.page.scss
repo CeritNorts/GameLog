@@ -84,17 +84,17 @@ ion-app, ion-content {
 
 /* Tarjetas de logros con disposición horizontal */
 .achievement-card {
-    background-color: rgba(0, 0, 0, 0.3); /* Fondo negro semi-transparente */
-    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    background-color: rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(10px);
     padding: 10px;
     border-radius: 8px;
-    display: flex; /* Usamos flexbox para distribuir los elementos */
-    flex-direction: row; /* Imagen y contenido en fila (horizontal) */
-    align-items: center; /* Centrar el contenido verticalmente */
-    gap: 15px; /* Espacio entre imagen y contenido */
-    width: 100%; /* Las tarjetas ocuparán todo el ancho disponible */
-    max-width: 1500px; /* Limitar el tamaño máximo para que no sea demasiado grande */
-    justify-content: flex-start; /* Alineación inicial */
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    gap: 15px;
+    width: 100%;
+    max-width: 1500px;
+    justify-content: flex-start;
 }
 
 .game-image-container {
@@ -135,8 +135,8 @@ ion-progress-bar {
 
 /* Lado derecho (botones y juegos recientes) */
 .right-side {
-    flex: 1 1 300px; /* Ajustamos el tamaño del contenedor derecho */
-    max-width: 350px; /* Maximo tamaño para que no ocupe todo el ancho */
+    flex: 1 1 300px;
+    max-width: 350px;
 }
 
 /* Botones de acción */
